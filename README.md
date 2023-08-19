@@ -41,8 +41,8 @@ To run this project, you need:
 
 ### Install Dependencies:
    Install the required Python packages using the following command:
-   '''bash
-   pip install -r <requirements.txt>
+    ```bash
+    pip install -r <requirements.txt>
 
 ### Download Pre-trained YOLO Weights:
 Download the pre-trained YOLO weights file (e.g., yolov8l.pt) from the official Ultralytics repository and place it in the project directory.
@@ -72,8 +72,8 @@ You can also adjust the following parameters to customize object detection behav
 
 ## Running the Object Detection ▶️
 Execute the script to perform object detection:
-'''bash
-python car_detection.py 
+    ``` bash
+   python car_detection.py
 The script will display annotated images with detected objects and print information about the detected objects.
 
 ## Dataset 📷
