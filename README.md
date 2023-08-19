@@ -40,9 +40,9 @@ To run this project, you need:
    git clone <https://github.com/singhjd/groupproject.git>
 
 ### Install Dependencies:
- Install the required Python packages using the following command:
- ```bash
-pip install -r requirements.txt
+   Install the required Python packages using the following command:
+   bashCopy code
+   pip install -r <requirements.txt>
 
 ### Download Pre-trained YOLO Weights:
 Download the pre-trained YOLO weights file (e.g., yolov8l.pt) from the official Ultralytics repository and place it in the project directory.
@@ -59,33 +59,34 @@ Ensure that your dataset directory structure looks like:
       ...
    |-- annotations.csv
 
+## Configuring the Script ⚙️
+Open the **'car_detection.py'** script. Update the following variables to match your dataset:
 
-
-## Configuring the Script
-Open the car_detection.py script.
-Update the following variables to match your dataset:
-CLASS_LABELS: A dictionary mapping class IDs to class labels.
-IMAGE_PATHS: A list of image paths you want to perform object detection on.
+**CLASS_LABELS:** A dictionary mapping class IDs to class labels.
+**IMAGE_PATHS:** A list of image paths you want to perform object detection on.
 You can also adjust the following parameters to customize object detection behavior:
-conf: The confidence threshold for object detection. By default, it is set to 0.5, but you can vary it based on your needs. Increasing it might result in fewer detections with higher confidence.
-iou: The IoU (Intersection over Union) threshold for object detection. Set to 0.7 by default, it determines the overlap required for two bounding boxes to be considered the same object. Adjust it to control the sensitivity of duplicate detection.
-model_type: You have the option to choose from different YOLO variants, such as yolov8n, yolov8m, yolov8l, yolov8x. In this project, we've used yolov8l as it provided satisfactory results. You can experiment with these variants to find the one that suits your task best.
-## Running the Object Detection
+
+**'conf':** The confidence threshold for object detection.
+**'iou':** The IoU (Intersection over Union) threshold for object detection.
+**'model_type':** Choose from different YOLO variants, such as yolov8n, yolov8m, yolov8l, yolov8x.
+
+## Running the Object Detection ▶️
 Execute the script to perform object detection:
 bashCopy code
 python car_detection.py 
 The script will display annotated images with detected objects and print information about the detected objects.
-## Dataset
-The dataset used in this project is provided in the self-driving-cars directory. It includes images and a CSV file containing bounding box annotations for cars, trucks, persons, bicyclists, and lights.
-The dataset is available at Kaggle Dataset Link.
-## Object Detection
-The object detection process is performed using the YOLO (You Only Look Once) model implemented using the Ultralytics library. YOLO is known for its real-time object detection capabilities. The code provided handles loading the model, processing images, and detecting objects.
-## Results
-The results of the object detection process can be observed in the annotated images displayed during script execution. Bounding boxes are drawn around detected objects, and relevant information such as class labels and confidence scores is printed.
 
-## Contributing
-Contributions to this project are welcome! If you find any issues or have ideas for improvements, feel free to submit a pull request. For major changes, please open an issue first to discuss your proposed changes.
-## License
-This project is licensed under the MIT License.
-## Acknowledgments
-We would like to acknowledge the creators of the Ultralytics library for their contribution to the ease of implementing object detection using YOLO.
+## Dataset 📷
+The dataset used in this project is provided in the self-driving-cars directory. It includes images and a CSV file containing bounding box annotations for cars, trucks, persons, bicyclists, and lights. The dataset is available at Kaggle.
+
+## Results 📊
+The annotated photos shown while the script is running can be used to observe the outcomes of the item detection process. Around items that are detected, bounding boxes are created, and pertinent details like class labels and confidence ratings are presented.
+
+## Contributing 🤝
+We encourage contributions to our endeavor! Please feel free to submit a pull request if you discover any problems or have suggestions for enhancements. Please open an issue first to discuss any significant modifications you'd like to make.
+
+## License 📜
+
+## Acknowledgments 🙏
+We would like to thank the designers of the Ultralytics library for their contribution to the simplicity of using YOLO to create object detection.
+
