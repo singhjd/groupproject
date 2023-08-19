@@ -41,7 +41,7 @@ To run this project, you need:
 
 ### Install Dependencies:
    Install the required Python packages using the following command:
-   bashCopy code
+   '''bash
    pip install -r <requirements.txt>
 
 ### Download Pre-trained YOLO Weights:
@@ -72,7 +72,7 @@ You can also adjust the following parameters to customize object detection behav
 
 ## Running the Object Detection ▶️
 Execute the script to perform object detection:
-bashCopy code
+'''bash
 python car_detection.py 
 The script will display annotated images with detected objects and print information about the detected objects.
 
