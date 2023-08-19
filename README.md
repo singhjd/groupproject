@@ -35,7 +35,8 @@ ultralytics
 Clone the Repository:
 Clone this repository to your local machine using the following command:
 bashCopy code
-git clone https://github.com/your-username/car-detection-yolo.git cd car-detection-yolo 
+git clone
+
 Install Dependencies:
 Install the required Python packages using the following command:
 bashCopy code
