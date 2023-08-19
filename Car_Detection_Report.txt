@@ -1,0 +1,38 @@
+INTRODUCTION
+Modern streets are evolving into data-driven hubs of innovation. As the world steers towards automation, the automotive domain is swiftly aligning. While automation brings forth convenience, its profound influence on road safety is undeniable. Consider a scenario where cars can autonomously detect and respond to other vehicles in real-time – the potential for collision prevention is revolutionary. With this vision, our project was aimed at two key objectives: firstly, to assess multiple model architectures for real-time car detection, and secondly, to demonstrate precise detection of cars under various scenarios.
+
+As we venture into computer vision, images become more than mere visuals; they transform into reservoirs of actionable information. Our task was to detect specific entities, particularly cars, using deep learning convolutional neural networks (CNNs). The strategy of transfer learning amplified our efficiency, enabling us to adapt pre-trained models to our unique dataset.
+
+METHODOLOGY
+2.1. Data
+2.1.1. DataSource
+Central to our initiative was a dataset from Kaggle named "Car Detection Dataset." It contains two primary directories with 1200 files. The "images" directory offers 1200 snapshots of cars in varied urban environments, all in JPEG format. Parallel to this is the "annotations" directory with 1200 XML files, outlining image annotations based on the PASCAL VOC protocol.
+
+Data Preprocessing
+For car detection, the dataset was divided into training and validation sets in a 4:1 ratio, producing a training set with 701 images and a validation set of 176 images. Since the default annotation format needed adjustments for our training procedures, we conducted a label format conversion. We employed models from two frameworks, each requiring its label format. The TensorFlow object detection API needed annotations in TFRecord format, while the Ultralytics framework for YOLOV8 required a plain text format. We ensured distinct annotation conversions for the training and validation sets for clarity during training phases.
+
+2.1.3. Data Augmentation
+Data augmentation is essential to inject variety into the training set. To ensure uniformity during evaluation, similar augmentations were applied across both frameworks. For this project, we focused on image scaling as our primary data augmentation technique.
+
+Models and Frameworks
+To craft a proficient car detection system, our strategy encompassed testing various models. In the sphere of car detection, some architectures have been particularly influential.
+
+2.2.1. Single Shot MultiBox Detector (SSD)
+The SSD, introduced in 2015, is skilled at detecting cars due to its diverse default boxes with varied aspect ratios. By adjusting these during predictions, the SSD aligns well with different car shapes. The SSD's design, with feature maps of varied resolutions, enables it to handle cars of distinct sizes and orientations.
+
+2.2.2. Faster R-CNN
+Faster R-CNN, which emerged in 2015, is an efficient alternative to SSD for car detection. This two-stage object detection system begins by suggesting potential car locations, then refines these with precise boundary box predictions. The introduction of the Region Proposal Network (RPN) addressed the slower runtimes inherent in some two-stage detectors.
+
+2.2.3. You Only Look Once (YOLO)
+YOLO, introduced in 2015, is praised for its speed, a crucial trait for real-time car detection. In YOLO, an image is divided into a grid, with each cell predicting bounding boxes for detected cars. YOLO scans the entire image in one go, classifying it as a single-stage detection framework. For this study, we harnessed YOLOv8m, given its robustness and efficacy in car detection.
+
+Frameworks
+Our approach was rooted in transfer learning, where models with pre-trained weights were refined for our specific car detection challenge. We sourced models from the TensorFlow2 Detection Model Zoo and the Ultralytics GitHub repository for YOLOV8. From the TensorFlow2 Detection Model Zoo, we selected EfficientDet D1, SSD MobileNet FPNLite, SSD ResNet50 FPN, and Faster R-CNN ResNet50. Key takeaways include:
+
+The models shared a consistent training resolution of 640x640.
+Both SSD and Faster R-CNN models were based on the ResNet50 architecture, facilitating direct performance comparison.
+With deployment in mind, we incorporated SSD MobileNet and EfficientDet into our experiments. MobileNet, developed by Google, is optimized for mobile and embedded devices, while EfficientDet excels in efficiency due to its design principles.
+
+Training and Evaluation
+With the dataset and models in place, training commenced. Since we lacked local GPU resources, we used Google Colab notebooks to access complimentary GPU services. Conforming to GPU specifications, the batch size was set to 4. In the TensorFlow setup, 5000 training steps were designated. For YOLOV8, which uses epochs instead of training steps, the equivalent was 29 epochs. This ensured both frameworks adhered to similar computational standards.
+
